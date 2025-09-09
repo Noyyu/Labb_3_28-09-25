@@ -14,6 +14,7 @@ namespace Labb_3_28_09_25
                 char    userBlock;
                 bool    filled;
                 bool    upsideDown;
+                bool    randig;
 
                 Console.WriteLine("Här bygger vi pyramider! Du ska vara med!");
                 Console.WriteLine("Vi bygger med block, hur många block hög vill du att din pyramid ska vara?");
@@ -88,12 +89,32 @@ namespace Labb_3_28_09_25
                     Console.WriteLine("Tråkmons..");
                 }
 
+                //_--------------------------------------
+                // Vill du att pyramiden ska vara randig?
+                //_______________________________________
+                Console.WriteLine("Bonus val! Vill du att pyramiden ska vara randig?");
+                Console.ForegroundColor = ConsoleColor.DarkGray;
+                Console.WriteLine("Ja: 1 Nej: 2");
+                Console.ForegroundColor = ConsoleColor.White;
+
+                if (randig = YesOrNo())
+                {
+                    Console.Clear();
+                    Console.WriteLine("Huhu, randig it is.");
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("Har du något emot randigt?");
+                }
+
                 //-----------------------
                 // Nu bygger vi pyramiden
                 //-----------------------
+                Console.WriteLine();
                 Console.WriteLine("Men då så, då bygger vi din pyramid!");
 
-                BuildPyramid(pyramidHeight, filled, upsideDown, userBlock);
+                BuildPyramid(pyramidHeight, filled, upsideDown, randig, userBlock);
 
 
                 //--------------------------------------------------------------------------
@@ -106,6 +127,7 @@ namespace Labb_3_28_09_25
 
                 if (YesOrNo() == true)
                 {
+                    Console.Clear();
                     Console.WriteLine("Kul! Då gör vi en till :D");
                     exit = false;
                 }
@@ -149,7 +171,7 @@ namespace Labb_3_28_09_25
         //-----------------------------------------------
         // Bygger pyramiden baserat på inmatade variabler
         //-----------------------------------------------
-        static void BuildPyramid(int pyramidHeight, bool filled, bool upsideDown, char buildingBlock)
+        static void BuildPyramid(int pyramidHeight, bool filled, bool upsideDown, bool randig, char buildingBlock)
         {
             int buildingBlocksInRow;
             int spacesInRow;
@@ -176,7 +198,12 @@ namespace Labb_3_28_09_25
                         
                         for (int k = 0; k < (buildingBlocksInRow = (2 * i - 1)); k++) // Bredd block
                         {
+                            if (randig == true && i % 2 == 0)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
+                            }
                             Console.Write(buildingBlock);
+                            Console.ForegroundColor = ConsoleColor.White;
                         }
                     }
                 }
@@ -197,7 +224,12 @@ namespace Labb_3_28_09_25
 
                         for (int k = 0; k < (buildingBlocksInRow = (2 * i - 1)); k++) // Bredd Block
                         {
+                            if (randig == true && i % 2 == 0)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
+                            }
                             Console.Write(buildingBlock);
+                            Console.ForegroundColor = ConsoleColor.White;
                         }
                     }
                 }
@@ -227,7 +259,12 @@ namespace Labb_3_28_09_25
                         {
                             if (k == 0 || k == (buildingBlocksInRow - 1) || i == pyramidHeight)
                             {
+                                if (randig == true && i % 2 == 0)
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                }
                                 Console.Write(buildingBlock);
+                                Console.ForegroundColor = ConsoleColor.White;
                             }
                             else
                             {
@@ -256,7 +293,12 @@ namespace Labb_3_28_09_25
                         {
                             if (k == 0 || k == (buildingBlocksInRow - 1) || i == pyramidHeight)
                             {
+                                if (randig == true && i % 2 == 0)
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                }
                                 Console.Write(buildingBlock);
+                                Console.ForegroundColor = ConsoleColor.White;
                             }
                             else
                             {
