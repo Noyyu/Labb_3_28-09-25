@@ -8,7 +8,7 @@ Ett program där du får bygga pyramider!
 - Visual Studio 2022 eller senare (valfritt)
 
 ## Köra programmet
-1. Klona repot: `git clone <repo-url>`
+1. Klona repot: `git clone https://github.com/Noyyu/Labb_3_28-09-25.git`
 2. Gå in i mappen: `cd Labb_3_28-09-25`
 3. Kör: `dotnet run`
 
