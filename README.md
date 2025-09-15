@@ -9,7 +9,7 @@ Ett program där du får bygga pyramider!
 
 ## Köra programmet
 1. Klona repot: `git clone <repo-url>`
-2. Gå in i mappen: `cd LLabb_3_28-09-25`
+2. Gå in i mappen: `cd Labb_3_28-09-25`
 3. Kör: `dotnet run`
 
 
